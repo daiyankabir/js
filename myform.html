@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<form action="/action_page.php" method="post">
+<p>Please fill the form:</p>
+
+ID:<br>
+<input id="numb" required>
+<br>
+Name:<br>
+<input type="text" name="Name" id="name" required><br>
+ password:<br>
+  <input type="password" name="password" id="pass" required><br>
+ confirm password:<br>
+ <input type="password" name="cpassword" id="cpass" required><br>
+  Phone:<br>
+  <input type="text" name="Phone" id="ph" required><br>
+  Address:<br>
+<input type="text" name="Address" id="ad"><br>
+<br>
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+</form>
+<script>
+function myFunction() {
+  var id,name,pass,cpass,ph,ad, text;
+
+  id = document.getElementById("numb").value;
+
+  if (isNaN(id)||id== "") {
+    alert("Input not valid");
+  } else {
+    text = "Input OK";
+  }
+  name= document.getElementById("name").value;
+   if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  pass=document.getElementById("pass").value;
+   if (pass == "") {
+    alert("password must be filled out");
+    return false;
+  }
+  
+  cpass=document.getElementById("cpass").value;
+   if (cpass == "" || cpass!=pass) {
+    alert("confirm password must be filled out and same as password");
+    return false;
+  }
+  
+  ph=document.getElementById("ph").value;
+   if (isNaN(ph)|| ph== "") {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html> 
